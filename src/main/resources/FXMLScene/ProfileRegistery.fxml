@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="653.0" prefWidth="1152.0" stylesheets="/StyleClass/window_style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.comp2042.SceneController.MainMenu.User_Register">
+   <children>
+
+       <MediaView fx:id="background" fitHeight="653.0" fitWidth="1152.0" layoutX="-4.0" layoutY="-9.0" />
+      <Pane layoutX="360.0" layoutY="70.0" prefHeight="495.0" prefWidth="482.0" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-background-radius: 20;">
+         <effect>
+            <GaussianBlur radius="40.03" />
+         </effect>
+      </Pane>
+      <Pane fx:id="Log_In_Pane" layoutX="400.0" layoutY="70.0" prefHeight="495.0" prefWidth="448.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="-3.0" layoutY="-3.0" prefHeight="495.0" prefWidth="441.0" spacing="25.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="IomanoidText" text="User Log In" wrappingWidth="264.8034653663635">
+                     <font>
+                        <Font name="Iomanoid-Regular" size="51.0" />
+                     </font>
+                  </Text>
+                  <HBox prefHeight="0.0" prefWidth="442.0" />
+                  <VBox prefHeight="148.0" prefWidth="442.0" spacing="30.0">
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="386.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="IomanoidText" text="Username : " textAlignment="CENTER" wrappingWidth="126.66998291015625">
+                                 <font>
+                                    <Font name="Iomanoid-Regular" size="20.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="Username" prefHeight="32.0" prefWidth="265.0" promptText="Username" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="386.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="IomanoidText" text="Password : " textAlignment="CENTER" wrappingWidth="126.67010498046875">
+                                 <font>
+                                    <Font name="Iomanoid-Regular" size="20.0" />
+                                 </font>
+                              </Text>
+                              <PasswordField fx:id="Password" prefHeight="36.0" prefWidth="265.0" promptText="Password" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="81.0" prefWidth="442.0" spacing="150.0">
+                           <children>
+                              <Button fx:id="Back_Button" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" styleClass="RegisterButton" text="Back">
+                              </Button>
+                              <Button fx:id="LogIn_Button" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" styleClass="RegisterButton" text="Log In" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Line endX="100.0" startX="-331.1131286621094" startY="0.7033180594444275" strokeWidth="0.5" />
+                  <HBox alignment="CENTER" prefHeight="20.0" prefWidth="386.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Don't Have an account?" textAlignment="CENTER" wrappingWidth="151.3187255859375">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font>
+                        </Text>
+                        <Hyperlink fx:id="To_SignUp" text="Sign Up Now">
+                           <font>
+                              <Font name="Berlin Sans FB" size="12.0" />
+                           </font></Hyperlink>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <Pane fx:id="Sign_Up_Pane" layoutX="370.0" layoutY="50.0" prefHeight="495.0" prefWidth="474.0" visible="false">
+         <children>
+            <VBox alignment="CENTER" layoutX="4.0" layoutY="-3.0" prefHeight="495.0" prefWidth="463.0" spacing="25.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" textAlignment="CENTER" wrappingWidth="384.80340576171875">
+                     <font>
+                        <Font name="Iomanoid-Regular" size="60.0" />
+                     </font>
+                  </Text>
+                  <Line endX="100.0" startX="-346.8418884277344" startY="0.5928993225097656" />
+                  <VBox alignment="CENTER_RIGHT" prefHeight="138.0" prefWidth="463.0" spacing="30.0">
+                     <children>
+                        <HBox prefHeight="33.0" prefWidth="386.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username : " textAlignment="CENTER" wrappingWidth="191.469970703125">
+                                 <font>
+                                    <Font name="Iomanoid-Regular" size="21.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="New_Username" prefHeight="30.0" prefWidth="215.0" promptText="ex. DragonFly" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="386.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password : " textAlignment="CENTER" wrappingWidth="189.070068359375">
+                                 <font>
+                                    <Font name="Iomanoid-Regular" size="21.0" />
+                                 </font>
+                              </Text>
+                              <PasswordField fx:id="New_Password" prefHeight="26.0" prefWidth="218.0" promptText="ex. @sammy123" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="386.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password : " textAlignment="CENTER" wrappingWidth="192.27008056640625">
+                                 <font>
+                                    <Font name="Iomanoid-Regular" size="20.0" />
+                                 </font>
+                              </Text>
+                              <PasswordField fx:id="New_Confirm_Password" prefHeight="28.0" prefWidth="214.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="81.0" prefWidth="442.0" spacing="150.0">
+                           <children>
+                              <Button fx:id="Back_to_Login" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" styleClass="RegisterButton" text="Back">
+                              </Button>
+                              <Button fx:id="Sign_Up_Submit" mnemonicParsing="false" prefHeight="30.0" prefWidth="83.0" styleClass="RegisterButton" text="Submit" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

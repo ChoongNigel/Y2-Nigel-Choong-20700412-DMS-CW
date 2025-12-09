@@ -1,0 +1,7 @@
+# Ignore build output
+target/
+
+# Ignore audio assets (too large for GitHub)
+*.mp3
+*.wav
+EOF

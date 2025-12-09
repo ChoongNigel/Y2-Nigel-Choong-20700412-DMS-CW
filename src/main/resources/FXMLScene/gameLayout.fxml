@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="653.0" prefWidth="1152.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.comp2042.Game.GuiController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="1152.0" styleClass="main_background" stylesheets="@../StyleClass/window_style.css">
+         <MediaView fx:id="gamerunningbg" fitHeight="653.0" fitWidth="1152.0" layoutX="-4.0" layoutY="4.0" />
+         <StackPane layoutX="424.0" layoutY="25.0" prefHeight="99.0" prefWidth="319.0">
+            <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tetris">
+                  <font>
+                     <Font name="Iomanoid-Regular" size="83.0" />
+                  </font>
+                  <fill>
+                     <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.5444444417953491" green="0.7418518662452698" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.03333333507180214" green="0.48444443941116333" blue="1.0" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </fill>
+                  <effect>
+                     <Bloom />
+                  </effect>
+               </Text>
+            </children>
+         </StackPane>
+         <VBox alignment="CENTER" layoutX="831.0" layoutY="42.0" prefHeight="109.0" prefWidth="201.0" spacing="5.0" styleClass="blueglowbox">
+            <children>
+               <Text fill="#f2ff00" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" textAlignment="CENTER" wrappingWidth="186.40325927734375">
+                  <font>
+                     <Font name="Pixel Emulator" size="27.0" />
+                  </font>
+                  <effect>
+                     <Glow level="0.33" />
+                  </effect></Text>
+               <Text fx:id="ScoreValues" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="182.1368408203125">
+                  <font>
+                     <Font name="Let's go Digital Regular" size="56.0" />
+                  </font>
+                  <effect>
+                     <Glow level="0.93" />
+                  </effect>
+               </Text>
+            </children>
+            <effect>
+               <Glow level="0.6" />
+            </effect>
+         </VBox>
+
+          <BorderPane fx:id="gameBoard" layoutX="550.0" layoutY="140.0" prefHeight="0.0" prefWidth="0.0" styleClass="gameBoard">
+            <center>
+                  <GridPane fx:id="gamePanel" prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <Pane prefHeight="0.0" prefWidth="0.0">
+                        <children>
+                            <GridPane fx:id="brickPanel">
+                                 </GridPane>
+                        </children>
+                     </Pane>
+                  </children>
+                  <columnConstraints>
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                  </rowConstraints>
+                  <effect>
+                     <Glow level="0.1" />
+                  </effect>
+               </GridPane>
+            </center>
+            <right>
+               <Pane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <Group fx:id="groupNotification" layoutX="-200.0" />
+                  </children>
+               </Pane>
+            </right>
+          </BorderPane>
+         <VBox alignment="TOP_CENTER" layoutX="843.0" layoutY="206.0" prefHeight="134.0" prefWidth="197.0" styleClass="blueglowbox">
+            <children>
+               <Text fill="#63d0ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Brick" textAlignment="CENTER" wrappingWidth="163.01993560791016">
+                  <font>
+                     <Font name="Pixel Emulator" size="21.0" />
+                  </font>
+                  <effect>
+                     <Glow level="0.42" />
+                  </effect>
+               </Text>
+               <StackPane prefHeight="99.0" prefWidth="108.0">
+                  <children>
+                     <GridPane fx:id="NextBrickPanel" alignment="CENTER" prefHeight="99.0" prefWidth="128.0">
+                        <effect>
+                           <Glow level="0.1" />
+                        </effect></GridPane>
+                  </children>
+               </StackPane>
+            </children>
+         </VBox>
+         <VBox layoutX="843.0" layoutY="395.0" prefHeight="236.0" prefWidth="204.0" spacing="15.0" styleClass="blueglowbox">
+            <children>
+               <Text fill="#89c8ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Instruction" textAlignment="CENTER" wrappingWidth="169.33672714233398">
+                  <font>
+                     <Font name="Pixel Emulator" size="17.0" />
+                  </font>
+               </Text>
+               <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="18.0" prefWidth="55.0" spacing="5.0">
+                        <children>
+                           <StackPane prefHeight="15.0" prefWidth="18.0" styleClass="instruction_key_button">
+                              <children>
+                                 <Label prefHeight="8.0" prefWidth="8.0" styleClass="key_desc" text="←" textFill="#0009ff">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </StackPane>
+                           <StackPane prefHeight="15.0" prefWidth="18.0" styleClass="instruction_key_button">
+                              <children>
+                                 <Label prefHeight="8.0" prefWidth="8.0" styleClass="key_desc" text="→" textFill="#0009ff">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </StackPane>
+                        </children>
+                     </HBox>
+                     <Text fill="#cdecff" strokeType="OUTSIDE" strokeWidth="0.0" text="Move to Left/Right" textAlignment="CENTER" wrappingWidth="113.73669815063477">
+                        <font>
+                           <Font name="Verdana" size="11.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0">
+                  <children>
+                     <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <children>
+                           <Pane prefHeight="200.0" prefWidth="200.0">
+                              <children>
+                                 <StackPane layoutX="16.0" prefHeight="18.0" prefWidth="23.0" styleClass="instruction_key_button">
+                                    <children>
+                                       <Label prefHeight="8.0" prefWidth="8.0" styleClass="key_desc" text="↑" textFill="#0009ff">
+                                          <font>
+                                             <Font size="11.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </StackPane>
+                              </children>
+                           </Pane>
+                        </children>
+                     </StackPane>
+                     <Text fill="#cdecff" strokeType="OUTSIDE" strokeWidth="0.0" text="Rotate" textAlignment="CENTER" wrappingWidth="96.13666558265686">
+                        <font>
+                           <Font name="Verdana" size="11.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0">
+                  <children>
+                     <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <children>
+                           <Pane prefHeight="200.0" prefWidth="200.0">
+                              <children>
+                                 <StackPane layoutX="16.0" prefHeight="18.0" prefWidth="23.0" styleClass="instruction_key_button">
+                                    <children>
+                                       <Label prefHeight="8.0" prefWidth="8.0" styleClass="key_desc" text="↓" textFill="#0009ff">
+                                          <font>
+                                             <Font size="11.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </StackPane>
+                              </children>
+                           </Pane>
+                        </children>
+                     </StackPane>
+                     <Text fill="#cdecff" strokeType="OUTSIDE" strokeWidth="0.0" text="Speed Up" textAlignment="CENTER" wrappingWidth="88.6700508594513">
+                        <font>
+                           <Font name="Verdana" size="11.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0">
+                  <children>
+                     <StackPane prefHeight="18.0" prefWidth="94.0">
+                        <children>
+                           <HBox prefHeight="17.0" prefWidth="56.0" spacing="6.0">
+                              <children>
+                                 <StackPane prefHeight="18.0" prefWidth="25.0" styleClass="instruction_key_button">
+                                    <children>
+                                       <Label prefHeight="14.0" prefWidth="13.0" styleClass="key_desc" text="Tab" textAlignment="CENTER" textFill="#0009ff">
+                                          <font>
+                                             <Font size="11.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </StackPane>
+                                 <StackPane prefHeight="18.0" prefWidth="44.0" styleClass="instruction_key_button">
+                                    <children>
+                                       <Label prefHeight="14.0" prefWidth="21.0" styleClass="key_desc" text="Spc" textFill="#0009ff">
+                                          <font>
+                                             <Font size="10.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </StackPane>
+                              </children>
+                           </HBox>
+                        </children>
+                     </StackPane>
+                     <Text fill="#cdecff" strokeType="OUTSIDE" strokeWidth="0.0" text="Smash Down" textAlignment="CENTER" wrappingWidth="79.603340446949">
+                        <font>
+                           <Font name="Verdana" size="11.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0">
+                  <children>
+                     <HBox prefHeight="17.0" prefWidth="98.0" spacing="10.0">
+                        <children>
+                           <StackPane prefHeight="18.0" prefWidth="29.0" styleClass="instruction_key_button">
+                              <children>
+                                 <Label prefHeight="14.0" prefWidth="44.0" styleClass="key_desc" text="Shft" textFill="#0009ff">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </StackPane>
+                           <StackPane prefHeight="18.0" prefWidth="29.0" styleClass="instruction_key_button">
+                              <children>
+                                 <Label prefHeight="14.0" prefWidth="4.0" styleClass="key_desc" text="C" textAlignment="CENTER" textFill="#0009ff">
+                                    <font>
+                                       <Font size="11.0" />
+                                    </font>
+                                 </Label>
+                              </children>
+                           </StackPane>
+                        </children>
+                     </HBox>
+                     <Text fill="#cdecff" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold" textAlignment="CENTER" wrappingWidth="100.93671417236328">
+                        <font>
+                           <Font name="Verdana" size="11.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" prefHeight="18.0" prefWidth="170.0">
+                  <children>
+                     <StackPane prefHeight="150.0" prefWidth="200.0">
+                        <children>
+                           <Pane prefHeight="200.0" prefWidth="200.0">
+                              <children>
+                                 <StackPane layoutX="14.0" prefHeight="18.0" prefWidth="29.0" styleClass="instruction_key_button">
+                                    <children>
+                                       <Label prefHeight="14.0" prefWidth="0.0" styleClass="key_desc" text="Esc" textFill="#0009ff">
+                                          <font>
+                                             <Font size="11.0" />
+                                          </font>
+                                       </Label>
+                                    </children>
+                                 </StackPane>
+                              </children>
+                           </Pane>
+                        </children>
+                     </StackPane>
+                     <Text fill="#cdecff" strokeType="OUTSIDE" strokeWidth="0.0" text="Pause" textAlignment="CENTER" wrappingWidth="88.6700508594513">
+                        <font>
+                           <Font name="Verdana" size="11.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+            </children>
+            <effect>
+               <Glow level="0.6" />
+            </effect>
+         </VBox>
+         <VBox layoutX="70.0" layoutY="53.0" prefHeight="64.0" prefWidth="229.0" styleClass="blueglowbox">
+            <children>
+               <HBox prefHeight="20.0" prefWidth="189.0">
+                  <children>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User: " wrappingWidth="74.47186279296875">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                        <fill>
+                           <LinearGradient endX="1.0" endY="1.0">
+                              <stops>
+                                 <Stop>
+                                    <color>
+                                       <Color red="1.0" green="0.23000000417232513" blue="0.23000000417232513" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="1.0">
+                                    <color>
+                                       <Color red="0.529629647731781" green="0.8432098627090454" blue="1.0" />
+                                    </color>
+                                 </Stop>
+                              </stops>
+                           </LinearGradient>
+                        </fill></Text>
+                     <Text fx:id="userShow" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="130.13673782348633">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+               <HBox prefHeight="23.0" prefWidth="222.0">
+                  <children>
+                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="High Score: ">
+                        <font>
+                           <Font name="Pixel Emulator" size="17.0" />
+                        </font>
+                        <fill>
+                           <LinearGradient endX="1.0" endY="1.0">
+                              <stops>
+                                 <Stop>
+                                    <color>
+                                       <Color red="1.0" green="0.46666666865348816" blue="0.46666666865348816" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="1.0">
+                                    <color>
+                                       <Color red="0.4444444477558136" green="0.8055555820465088" blue="1.0" />
+                                    </color>
+                                 </Stop>
+                              </stops>
+                           </LinearGradient>
+                        </fill></Text>
+                     <Text fx:id="userHighscore" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="68.53661727905273">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Text>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+         <VBox fx:id="levelPane" layoutX="401.0" layoutY="140.0" prefHeight="72.0" prefWidth="99.0" styleClass="levelbox">
+            <children>
+               <Text fx:id="levelText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="levelfont" text="Level" textAlignment="CENTER" wrappingWidth="66.2199478149414">
+                  <font>
+                     <Font name="Pixel Emulator" size="17.0" />
+                  </font>
+                  <effect>
+                     <Glow />
+                  </effect>
+               </Text>
+               <Text fx:id="levelNumber" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="63.736690521240234">
+                  <font>
+                     <Font name="Pixel Emulator" size="23.0" />
+                  </font>
+               </Text>
+            </children>
+         </VBox>
+         <VBox layoutX="400.0" layoutY="245.0" prefHeight="122.0" prefWidth="87.0" styleClass="blueglowbox">
+            <children>
+               <Text fill="#63d0ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Hold" textAlignment="CENTER" wrappingWidth="65.4198989868164">
+                  <font>
+                     <Font name="Pixel Emulator" size="19.0" />
+                  </font>
+                  <effect>
+                     <Glow level="0.29" />
+                  </effect>
+               </Text>
+               <GridPane fx:id="holdBrickPanel" prefHeight="64.0" prefWidth="17.0">
+               </GridPane>
+            </children>
+         </VBox>
+         <StackPane fx:id="levelUpPanel" layoutX="445.0" layoutY="297.0" prefHeight="64.0" prefWidth="369.0" visible="false">
+            <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Level Up" textAlignment="CENTER">
+                  <font>
+                     <Font name="Pixel Emulator" size="54.0" />
+                  </font>
+                  <fill>
+                     <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.3740740716457367" green="0.5931481719017029" blue="1.0" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.006729475100942127">
+                              <color>
+                                 <Color red="1.0" green="0.10370370000600815" blue="0.10370370000600815" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.704408626858812">
+                              <color>
+                                 <Color red="0.9368420839309692" green="0.31922027468681335" blue="0.9059610366821289" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="1.0" green="0.6259258985519409" blue="0.7007407546043396" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </fill>
+                  <effect>
+                     <Glow level="0.23" />
+                  </effect>
+               </Text>
+            </children>
+         </StackPane>
+         <Pane fx:id="GameOverPanel" prefHeight="654.0" prefWidth="1152.0" visible="false">
+            <children>
+               <Pane layoutX="-1.0" prefHeight="654.0" prefWidth="1152.0" styleClass="gameOverOverlay" />
+               <AnchorPane layoutX="248.0" layoutY="150.0" prefHeight="354.0" prefWidth="605.0" styleClass="blueglowboxpause">
+                  <children>
+                     <Text fill="#f7ff67" layoutX="174.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Score" textAlignment="CENTER" wrappingWidth="306.060791015625">
+                        <font>
+                           <Font name="Pixel Emulator" size="24.0" />
+                        </font>
+                     </Text>
+                     <Text layoutX="86.0" layoutY="84.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over" textAlignment="CENTER" wrappingWidth="513.2000000000002">
+                        <font>
+                           <Font name="Pixel Emulator" size="55.0" />
+                        </font>
+                        <fill>
+                           <LinearGradient endX="1.0" endY="1.0">
+                              <stops>
+                                 <Stop>
+                                    <color>
+                                       <Color red="1.0" green="0.3888888955116272" blue="0.3888888955116272" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="0.006729475100942127">
+                                    <color>
+                                       <Color red="1.0" green="0.3888888955116272" blue="0.3888888955116272" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="1.0">
+                                    <color>
+                                       <Color red="1.0" />
+                                    </color>
+                                 </Stop>
+                              </stops>
+                           </LinearGradient>
+                        </fill>
+                     </Text>
+                     <Text fx:id="ScoreValues2" fill="WHITE" layoutX="228.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="197.0">
+                        <font>
+                           <Font name="Let's go Digital Regular" size="72.0" />
+                        </font>
+                     </Text>
+                     <Button fx:id="Restart" layoutX="360.0" layoutY="249.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" styleClass="blueglowboxButton" text="Restart" textFill="#dbeeff">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="gameToHome" layoutX="163.0" layoutY="249.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" styleClass="blueglowboxButton" text="Home" textFill="#dbeeff">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Button>
+                  </children>
+                  <effect>
+                     <Glow level="0.38" />
+                  </effect>
+               </AnchorPane>
+            </children>
+         </Pane>
+         <Pane fx:id="PausePanel" prefHeight="654.0" prefWidth="1152.0" visible="false">
+            <children>
+               <Pane prefHeight="654.0" prefWidth="1152.0" styleClass="gameOverOverlay" />
+               <AnchorPane layoutX="260.0" layoutY="190.0" prefHeight="277.0" prefWidth="638.0" styleClass="blueglowboxpause">
+                  <children>
+                     <Text layoutX="62.0" layoutY="104.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Pause" textAlignment="CENTER" wrappingWidth="513.2000000000002">
+                        <font>
+                           <Font name="Pixel Emulator" size="55.0" />
+                        </font>
+                        <fill>
+                           <LinearGradient endX="1.0" endY="1.0">
+                              <stops>
+                                 <Stop>
+                                    <color>
+                                       <Color red="1.0" green="0.3888888955116272" blue="0.3888888955116272" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="0.006729475100942127">
+                                    <color>
+                                       <Color red="0.25216373801231384" green="0.8842105269432068" blue="0.7999376058578491" />
+                                    </color>
+                                 </Stop>
+                                 <Stop offset="1.0">
+                                    <color>
+                                       <Color red="0.03703703731298447" green="0.5506172776222229" blue="1.0" />
+                                    </color>
+                                 </Stop>
+                              </stops>
+                           </LinearGradient>
+                        </fill>
+                     </Text>
+                     <Button fx:id="Restart2" layoutX="253.0" layoutY="157.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" styleClass="blueglowboxButton" text="Restart" textFill="#dbeeff">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="gameToHome2" layoutX="93.0" layoutY="157.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" styleClass="blueglowboxButton" text="Home" textFill="#dbeeff">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Button>
+                     <Button fx:id="Resume" layoutX="432.0" layoutY="157.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="130.0" styleClass="blueglowboxButton" text="Resume" textFill="#dbeeff">
+                        <font>
+                           <Font name="Pixel Emulator" size="16.0" />
+                        </font>
+                     </Button>
+                  </children>
+                  <effect>
+                     <Glow level="0.93" />
+                  </effect>
+               </AnchorPane>
+            </children>
+         </Pane>
+      </Pane>
+   </children>
+</AnchorPane>

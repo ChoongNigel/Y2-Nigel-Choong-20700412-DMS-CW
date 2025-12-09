@@ -1,0 +1,19 @@
+package com.comp2042.GameLogic;
+
+import com.comp2042.GameInfo.ViewData;
+
+public interface InputEventListener {
+
+    DownData onDownEvent(MoveEvent event);
+
+    ViewData onLeftEvent(MoveEvent event);
+
+    ViewData onRightEvent(MoveEvent event);
+
+    ViewData onRotateEvent(MoveEvent event);
+
+    ViewData onHoldEvent(MoveEvent event);
+
+
+    void createNewGame();
+}

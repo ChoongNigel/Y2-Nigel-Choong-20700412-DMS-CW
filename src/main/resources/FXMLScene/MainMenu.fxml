@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="653.0" prefWidth="1152.0" stylesheets="/StyleClass/window_style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.comp2042.SceneController.MainMenu.MainMenuControl">
+   <children>
+      <MediaView fx:id="background" fitHeight="653.0" fitWidth="1152.0" />
+      <Pane layoutX="440.0" layoutY="50.0" prefHeight="557.0" prefWidth="334.0" style="-fx-background-color: rgba(255,255,255,0.8); -fx-background-radius: 20;">
+         <effect>
+            <GaussianBlur radius="49.45" />
+         </effect>
+      </Pane>
+      <VBox fx:id="MenuPane" layoutX="420.0" layoutY="60.0" prefHeight="563.0" prefWidth="390.0" visible="false">
+         <children>
+            <Pane prefHeight="140.0" prefWidth="390.0">
+               <children>
+                  <Text layoutX="-51.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TETRIS" textAlignment="CENTER" wrappingWidth="474.00003051757835">
+                     <font>
+                        <Font name="Iomanoid-Regular" size="96.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient cycleMethod="REFLECT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="0.5771604776382446" blue="0.49259260296821594" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color red="1.0" green="0.5771604776382446" blue="0.49259260296821594" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.9473684430122375" green="0.05614035204052925" blue="0.05614035204052925" opacity="0.8100000023841858" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                     <effect>
+                        <Glow level="0.52" />
+                     </effect>
+                  </Text>
+               </children>
+            </Pane>
+            <VBox alignment="CENTER" prefHeight="516.0" prefWidth="463.0" spacing="30.0">
+               <children>
+                  <Button fx:id="PlayAnnonymous" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="78.0" prefWidth="253.0" styleClass="MenuButton" text="Play as Guest" textOverrun="CLIP">
+                  </Button>
+                  <Button fx:id="PlayUser" mnemonicParsing="false" prefHeight="75.0" prefWidth="253.0" styleClass="MenuButton" text="Play as User" textOverrun="WORD_ELLIPSIS">
+
+
+                  </Button>
+                  <Button fx:id="LeaderBoard" mnemonicParsing="false" prefHeight="78.0" prefWidth="250.0" styleClass="MenuButton" text="Leaderboard" textOverrun="WORD_ELLIPSIS">
+
+
+                  </Button>
+                  <Button fx:id="Exit" mnemonicParsing="false" prefHeight="62.0" prefWidth="250.0" styleClass="MenuButton" text="Exit" textOverrun="WORD_ELLIPSIS">
+
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+
+                                          </VBox>
+      <AnchorPane fx:id="leaderboardPane" prefHeight="654.0" prefWidth="1151.0">
+         <children>
+            <Button fx:id="leaderboardBackButton" layoutX="794.0" layoutY="556.0" mnemonicParsing="false" styleClass="MenuButton" text="Back" />
+            <Text fill="#1383df" layoutX="440.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leaderboard" textAlignment="CENTER" wrappingWidth="334.39999999999986">
+               <font>
+                  <Font name="Pixel Emulator" size="25.0" />
+               </font>
+            </Text>
+            <ScrollPane layoutX="459.0" layoutY="140.0" prefHeight="441.0" prefWidth="295.0">
+               <content>
+                  <VBox fx:id="leaderboardContainer" prefHeight="483.0" prefWidth="332.0" styleClass="leaderboardBackground" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
